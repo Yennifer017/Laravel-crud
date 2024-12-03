@@ -59,8 +59,9 @@ class StudentController extends Controller
             $student->save();
 
         }
-        //return redirect()->back();
-        return view('welcome');
+        
+        $students = student::where('status', '=', true)->get();
+        return view('students', compact('students'));
     }
 
     public function redirectModifyView(Request $request){

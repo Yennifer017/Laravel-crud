@@ -61,7 +61,7 @@
                                             <i class="bi bi-trash3-fill"></i>
                                         </button>
                                     </form>
-                                    <form action="{{ route('modify_student') }}" class="me-2" method="post"> 
+                                    <form action="{{ route('administrative_notes') }}" class="me-2" method="post"> 
                                         @csrf
                                         <input type="hidden" name="id" value="{{ $student->id }}">
                                         <button class="btn btn-success" type="submit">
