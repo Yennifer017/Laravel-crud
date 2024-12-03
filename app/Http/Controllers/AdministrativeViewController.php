@@ -23,4 +23,27 @@ class AdministrativeViewController extends Controller
         $notes = Administrative_notes::where('id_student', '=', $request->id_student)->get();
         return view('administrative_notes', ['id' => $request->id_student, 'notes' => $notes]);
     }
+
+    public function delete(Request $request){
+        $note = Administrative_notes::find($request->id);
+        if ($note) {
+            $note->delete();
+        }
+        
+        $notes = Administrative_notes::where('id_student', '=', $request->id_student)->get();
+        return view('administrative_notes', ['id' => $request->id_student, 'notes' => $notes]);
+    }
+
+    public function modify(Request $request){
+        $note = Administrative_notes::find($request->id_note);
+        if ($note) {
+            if ($request->has('notes') && $request->notes !== null){
+                $note->notes = $request->notes;
+                $note->save();
+            }
+        }
+        
+        $notes = Administrative_notes::where('id_student', '=', $request->id_student)->get();
+        return view('administrative_notes', ['id' => $request->id_student, 'notes' => $notes]);
+    }
 }

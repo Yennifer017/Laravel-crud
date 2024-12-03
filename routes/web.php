@@ -25,3 +25,9 @@ Route::post('/administrative_notes',
 
 Route::post('/add_administrative_notes', 
     [AdministrativeViewController::class, 'addNote'])->name('add_administrative_notes');
+
+Route::post('/delete_note_db', [AdministrativeViewController::class, 'delete'])
+    ->name('delete_note_db');
+
+Route::post('/modify_note_db', [AdministrativeViewController::class, 'modify'])
+    ->name('modify_note_db');
