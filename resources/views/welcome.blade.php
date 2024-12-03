@@ -68,9 +68,7 @@
             </p>
         </main>
 
-        <footer class="mt-auto text-white-50">
-            <p>Contact us: <a href="https://github.com/Yennifer017/" class="text-white">@Yennifer017</a>.</p>
-        </footer>
+        
     </div>
 
 
